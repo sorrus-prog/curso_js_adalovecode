@@ -6,6 +6,55 @@
   </head>
   <body>
     <h1>Sentencias en Javascript</h1>
-    
+    <h2>Punto y coma</h2>
+    <p>Terminan con punto y coma, aunque no es olbigatorio es recomendable siempre usarlo</p>
+    <script>
+      var a = 1;
+      var b = 2;
+      var c = a+b;
+      alert(c);
+    </script>
+    <p>Tambien podemos porner varias sentencias en una linea seaparandolas por punto y coma</p>
+    <script>
+      var a = 3; var b = 3; var c = a+b;
+      alert(c);
+    </script>
+    <h2>Espacios en Blanco</h2>
+    <p>los multiples espacios en blanco se ignoran</p>
+    <script>
+      var nombre = "sorrus";
+      alert (nombre);
+    </script>
+    <p>es recomendable usar espacios cuando se usen operadores aritmeticos (+,-,*,/,=)</p>
+    <h2>Lineas de mas de 80 caracteres</h2>
+    <p>es recomendable dividir lineas largas de mas de 80 en dos usando un operador, por ej un operaddor de asignacion</p>
+    <script>
+      var apellidos =
+       "martínez";
+      alert (apellidos);
+    </script>
+    <h2>Bloques de codigo</h2>
+    <p>Se Agrupan entre llaves y se usan para funciones, bucles, condiciones, etc</p>
+    <script>
+      function hola(){
+        alert ("hola");
+        alert ("Caracola");
+      }
+      hola();
+    </script>
+    <h2>Palabras reservadas (keywords)</h2>
+    <ul>
+      <li>break</li>
+      <li>continue</li>
+      <li>switch</li>
+      <li>for</li>
+      <li>do...while</li>
+      <li>if...else</li>
+      <li>debugger</li>
+      <li>try ... catch</li>
+      <li>var</li>
+      <li>function</li>
+      <li>return</li>
+    </ul>
   </body>
 </html>
