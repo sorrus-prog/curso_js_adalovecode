@@ -5,6 +5,9 @@
     <title>variables en Javascript</title>
   </head>
   <body>
+    <p id="parrafo1"></p>
+    <p id="parrafo2"></p>
+    <p id="parrafo3"></p>
     <script>
       /* VARIABLES EN Javascript
         -identificadores unicos
@@ -12,8 +15,31 @@
         -empienzan por letra, $, _ y siguen con letra, numero $ o _
         -pueden contener cadenas ('',"") y numeros (enteros o decimales)
         -son sensibles a las mayusculas
-        -no se pueden usas palabras reservadas
+        -no se pueden usas palabras reservadas */
 
+        //Declaracion de VARIABLES
+        var nombre;
+
+        //mostramos el valor de la variable "undefined"
+        document.getElementById("parrafo1").innerHTML = nombre;
+
+        //asignacion de valor a una vairable
+        nombre = "sorrus";
+
+        //mostramos el valor de la variables
+        document.getElementById("parrafo2").innerHTML = nombre;
+
+        //Declaracion de variables en una sola sentencia
+        //var pais, nacimiento;
+        var pais ="reino unido",
+            nacimiento=1854;
+
+        //asigancion de operaciones a una variables
+        var nombreApellid = "sorrus" + " " + "Lovelace";
+        var fallecimiento = nacimiento + 10;
+
+        document.getElementById("parrafo3").innerHTML = nombreApellid + " " +
+        "nacio en " + pais + " en " + nacimiento + " y murio en " + fallecimiento;
 
     </script>
   </body>
