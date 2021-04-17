@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.14 tipos de datos</title>
+</head>
+<body>
+    <script>
+        //cadena o string
+        var cadena = "sorrus";
+        var cadena2 = " sorreano";
+        var cadena3 = "sorrus 'sorreao'";
+
+        //numero o number
+        var entero = 3;
+        var decimal = 5.5;
+        var cientifica = 12e3
+        var cientificaFraccion = 2e-1;
+
+        //booleanos o boolean
+        var cierto = true;
+        var falso = false;
+
+        //array
+        var lista =[1, 2, "tres", 4];
+        alert(lista[2]);
+
+        //objetos
+        var instrumento = {tipo: "guitarra", marca: "fender", modelo: "telecaster"};
+
+        //operador de tipo typeof
+        alert(typeof cadena3)
+        alert(typeof cientificaFraccion)
+        alert(typeof cierto)
+        alert(typeof lista)
+        alert(typeof instrumento)
+
+        //UNDEFINED
+        var objetoSinDefinir;
+        alert (objetoSinDefinir); //devuelve undefined
+
+        //VACIO
+        var cadena4 = "";
+        alert("cadena: " + cadena4 + "tipo: " + typeof cadena4);
+
+        //NULL
+        var instrumento = null;
+        alert("instrumento: "+instrumento + "  tipo: "+ typeof instrumento);
+
+        //Nulos vs No definidos
+        typeof undefined; // Devuelve no definido
+        typeof null; //Devuelve nulo
+        undefined === null; //Devuelve false porque aunque esten sin valor son tipos de datos distintos
+        null == undefined; //Devuelve true porque no ambos estan sin valor
+
+        
+
+    </script>
+</body>
+</html>
