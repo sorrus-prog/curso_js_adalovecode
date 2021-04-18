@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* for (<sentencia1>;<sentencia2>;<sentencia3>){
+            codigo que se repite
+        }
+        -SENTENCIA 1: se ejecuta antes de que empiece el bloque de codigo a repetir
+        -SENTENCIA 2: define la condicion por la que el bloque de codigo se va a ejecutar
+        -SENTENCIA 3: se ejecuta despues que acabe el bloque de codigo a repetir 
+         */
+
+         var i;
+         for (i = 0; i <= 5; i+=2){
+             alert("i es igual "+i);
+         }
+
+         //VARIACIONES 
+         //1. si omitimos la primera sentencia debemos haber inicializado la variable con anterioridad
+         var j = 1;
+         for (; j < 2; j++){
+             alert("j es igual a "+j);
+         }
+         //2. si omitimos la segunda sentencia debemos incluir una instruccion break dentro del codigo a ejecutar
+         var k;
+         for (k = 1; ; k++){
+            alert("k es igual a "+k)
+             if (k == 5){
+                 break;
+             }
+         }
+
+         //3. si omitimos la tercera sentencia debemos incrementar o decrementar el valor de la variable dentre del bucle
+         var l;
+         for (l = 1; l <= 5; ){
+             alert("l = "+l);
+             l++;
+         }
+         //4. podemos trabar con dos o mas valores
+         var n, m;
+         for (n=1, m=10; n <= 10, m>=1; n++, m--){
+             alert ("n= "+n+" m= "+m);
+         }
+    </script>
+</body>
+</html>

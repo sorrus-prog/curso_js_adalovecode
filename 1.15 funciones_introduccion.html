@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //SINTAXIS DE UNA FUNCION
+    //function nombre_funcion (<parametros_separados_por_comas) {codigo}
+
+    //funcion sin parametros
+    function saludo(){
+        alert("hola");  
+    }
+    //saludo ();//invocacion de la funcion
+
+    //los parentesis invocan la funcion
+    //var resultadoSaludo = saludo();
+    //alert(resultadoSaludo);
+    //saludo; //no devuelve nada
+
+    //sin parentesis se puede guardar la funcion en una variable
+    //var resultadoSaludo2 = saludo;
+    //alert(resultadoSaludo2);
+
+    //funcion con parametros
+    function producto (a, b){
+        return a * b;
+    }
+
+    var resultadoProducto = producto (4, 5);
+    alert(resultadoProducto);
+    alert(producto (5, 6));
+    
+
+    </script>
+</body>
+</html>
