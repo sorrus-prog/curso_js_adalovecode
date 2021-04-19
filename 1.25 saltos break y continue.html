@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* BREAK: salir o saltar fuera de un bucle, finalizandolo,
+        CONTINUE: saltar hasta la siguiente iteracion del bucle ; permite saltar una o mas iteraciones.*/
+        
+        //ejemplo de bucle con break
+        var i;
+        for (i=0; i<10; i++){
+            if(i==3){
+                break;
+            }
+        alert ("i = "+i);
+        }
+
+        //ejemplo de bucle con continue
+        var k;
+        for (k=0; k<10; k++){
+            if (k==5 || k==2){
+                continue;
+            }
+        alert("k = "+k)
+        }
+
+        /*ETIQUETAS: preceder una sentencia con el nombre de la etiqueta seguido de dos puntos
+        -break sin etiqueta se pueden utilizar en bucles o switch
+        -break con etiqueta tambien se puede utilizar en un bloque de sentencias etiquetado
+        */
+
+        //ejemplo de break con etiqueta
+        var animales = ["perro", "gato", "loro"];
+        ver_animales: {
+            alert(animales [0]);
+            alert(animales [1]);
+            break ver_animales;
+            alert(animales [2]);
+
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* VARIABLES LOCALES
+        -se definen dentro de una funcion
+        -tienen un ambito local en la funcion
+        -son accesibles unicamente dentro de la funcion
+        -podemos declarar variables con el mismo nombre en diferentes funciones
+        -la variable local desaparece cuando finaliza la funcion
+        */
+       function saludar(){
+        var saludo = "Hola";
+        alert(saludo); //si este alert lo declaramos despues de la invocacion no se va a ejecutar porque la variable tiene un ambito local.
+       }
+       saludar();
+
+       //VARIABLES GLOBALES
+       /* se definen fuera de las funciones
+       -tienen ambito global (en toda la pagina)
+       -son accesibles dentro y fuera de las funciones
+       -la goblaes desaparecen cuando se sale de la pagina
+       */
+      var despedida = "Adios";
+      function despedir (){
+          alert(despedida);
+      }
+      despedir();
+
+      //VARIABLES AUTOMATICAMENTE GLOBALES
+      // - si asignamos un valor a una variable no declarada se convierte en global
+
+      function preguntar (){
+          pregunta = "¿Que es eso?"
+      }
+      preguntar();
+      alert(pregunta);
+
+      //VARIABLES LOCALES Y GLOBALES CON EL MISMO NOMBRE
+      var miVariable = "fuera";
+      function ambito (){
+          var miVariable = "Dentro";
+          alert(miVariable);
+      }
+      alert(miVariable); //devuelve fuera
+      ambito(); // devuelve dentro
+      alert(miVariable); // devuelve fuera
+
+      //VARIABLE GLOBAL REDEFINIDA DENTRO DE UNA FUNCION
+      var miVariable2 = "fuera";
+      function ambito2 (){
+          miVariable2 = "Dentro";
+          alert(miVariable2);
+      }
+      alert(miVariable2); //devuelve fuera
+      ambito2(); // devuelve dentro
+      alert(miVariable2); // devuelve dentro
+
+
+
+
+    </script>
+</body>
+</html>
