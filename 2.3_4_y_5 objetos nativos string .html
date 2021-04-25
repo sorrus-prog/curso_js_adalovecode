@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+<script>
+  //INSTANCIACIÓN
+    var daw = "Desarrollo de aplicaciones web";
+    var dam = "Desarrollo de aplicaciones multiplataforma";
+    var asir = "Administracion de 'Sistemas informaticos' en Red";
+    var smr = "Sistemas \"microinformatico\" y Redes";
+    var ciclos = new String ("");
+
+    //alert (daw);
+    //alert (dam);
+    //alert (asir);
+    //alert (smr);
+    //alert (ciclos);
+
+  //CONCATENACIÓN DE CADENAS
+  ciclos += "Hay 3 ciclos de grado superior: \n";
+  ciclos += daw + ", " + dam + " y " + asir + "\n";
+  ciclos += "y un ciclo de grado medio: \n";
+  ciclos += smr;
+  //alert(ciclos);
+
+  //PROPIEDADES:
+  //LENGTH: devuelve la longitud de una CADENA
+  //alert ( "La longitud de la cadena ciclos es: "+ ciclos.length);
+
+  //METODOS:
+    // DE BUSQUEDA:
+    //charAt (<num>): devuelve el caracter de una posicion
+    alert("el caracter 0 del objeto ciclos es: "+ciclos.charAt(0));
+    //charCodeAt (<num>): devuelve el caracter unicode html de una posicion
+    alert("el charCodeAt 0 del objeto ciclos es: "+ciclos.charCodeAt(0));
+    //fromCharCode (<num>): convierte valores unicode html en numeros
+    var res = ("Cuando convertimos los numero unicode 72, 73 y 74 a caracateres:"+String.fromCharCode (72, 73, 74));
+    alert(res);
+    //indexOf (<caracter>) nos devuelve la primera posicion de un caracter en una cadena
+    alert("la primera aparcion de la letra a en ciclos es: "+ciclos.indexOf("a"));
+    //lastIndexOf (<caracter>) nos devuelve la ultima posicion de un caracter en una cadena
+    alert("la ultima aparcion de la letra a en ciclos es: "+ciclos.lastIndexOf("a"));
+    //search (<cadena|expresion>) busca una cadena o expresion regular en otra cadena.
+    alert("Busca la cadena 'web' en la cadena daw "+daw.search("web"));
+    //match (<expresion regular>) busca una expresion regular en una CADENA
+
+    // DE COMPARACIÓN:
+    //localeCompare (<cadena>) devuelve -1 (antes), 0 (igual) o 1 (despues)
+    alert("¿daw esta antes o despues que dam? "+daw.localeCompare(dam)); //devuelve 1
+    var str1 = "abc";
+    var str2 = "cdf";
+    var n = str2.localeCompare(str1);
+    alert(n)
+
+    //INCLUYE, EMPIEZA O TERMINA
+    //includes (<cadena>): devuelve true si la cadena incluye el parametro.
+    alert("Incluye 'aplicaciones' daw? "+daw.includes("aplicaciones"));
+    //startsWith(<cadena>): devuelve true si la cadena empieza con el parametro.
+    alert("Empieza 'aplicaciones' daw? "+daw.startsWith("aplicaciones"));
+    //endsWith(<cadena>): devuelve true si la cadena termina con el parametro.
+      alert("termina 'aplicaciones' daw? "+daw.endsWith("aplicaciones"));
+
+    //CONCATENACION Y REPETICION
+    //concat (<cadena>): concatena a la cadena al parametro
+      alert("concatena dam con daw \n"+daw.concat(dam));
+    //repeat (<cadena>): repite el numero de veces que aparezca como parametro
+      alert("Repite daw \n"+daw.repeat(2));
+
+    //EXTRACCION
+    //slice (<posicion inicial>,<posicion final>): devuelve la cadena comprendida entre las dos posiciones.
+     alert("la cadena que hay entre 0 y 1 es: "+daw.slice(0,1)); //un solo parametro(<>) devuelve todo a partir de ahi. (-1) devuelve el ultimo caracater
+     //subString (<posicion inicial>,<posicion final>): devuelve la cadena comprendida entre las dos posiciones.
+     alert("la cadena que hay entre 0 y 1 es: "+daw.substring(0,1)); //un solo parametro(<>) devuelve todo a partir de ahi. (penultimo y ultimo) devuelve el ultimo caracater, y si estan desordenaos los ordena
+     //substr (<posicion incial>,<numero de caracteres>): devuelve la cadena comprendida entre el parametro inciial y el numero de caracteres indicado
+      alert("la cadena de 7 caracteres a partir del segundo es: "+daw.substr(2,7)); 
+     //split (<caracter>,[numero de arrays]): divide la cadena en un array de sub cadenas separadas por el caracter del primer parametro
+     alert("la cadena daw separada por espacios es: "+daw.split(" ",3)); //si en el parametro no colocamos nada devuelve los caracteres separados
+      //trim (<cadena>): extrae los caracteres de la cadena eliminando los espacios del principio y del final
+       alert( "La cadena sin espacios quedaria "+"                 Hola,mundo!      ".trim());
+
+    //MAYUSCULAS Y MINUSCULAS
+    //toLowerCase (): devuelve la cadena en minusculas
+    alert(daw.toLowerCase());
+    //toUpperCase (): devuelve la cadena en MAYUSCULAS
+    alert(daw.toUpperCase());
+
+    //METODOS ESPECIALES
+    //toString () :devuelve el valor del objeto string
+    alert(daw.toString());
+    //valueOf (): devuelve el valor primitivo de la cadena
+    alert(daw.valueOf());
+
+</script>
+  </body>
+</html>

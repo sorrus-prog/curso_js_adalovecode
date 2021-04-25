@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* CARACTERISTICAS:
+-Permite realizar operaciones matematicas
+-No es constructor: no usamos var x = new Math ();
+-siempre usamos el objeto Math directamente ej
+var pi = Math.PI; o var raiz = Math.sqrt(36);*/
+
+ //PROPIEDADES:
+ //E, LN2, LN10, LOG2E, LOG10E, PI, SQRT1_2, SQRT2
+ var pi = Math.PI;
+ alert("Pi es igual a "+pi);
+
+ //METODOS:
+ //random(): no se le pasa ningun parametro y devuelve un numero aleatorio entre 0 y 1 incluyendo decimales
+ alert(" el numero aleatorio es igual a "+Math.random());
+
+ //max(<lista de valores>) y min (<lista de valores>): ambas devuelven el valor menor o mayor de una lista 
+ var a = (1, 2, 3, 4, 16);
+ alert("El numero minimo de la lista es "+Math.min(a));
+ alert("El numero max de la lista es "+Math.max(a));
+
+ //round (<numero>): devuelve un numero redondeado si es menor que igual o menor que 4.5 rendonde a la baja, de lo contrario a la alta.
+var a = 4.4;
+var b = 4.6;
+alert("a redondeado es "+Math.round(a));
+alert("b redondeado es "+Math.round(b));
+
+//ceil (<numero>): redondea siempre al alza
+alert(" el redondeo al alza de 4.4 es "+Math.ceil(a));
+
+//floor (<numero>): redondea siempre a la baja
+alert("el redondeo a la baja de 4.6 es "+Math.floor(b));
+
+//NUMERO ALEATORIO ENTRE 0 Y 10:
+var aleatorio = Math.ceil(Math.random()*11 );
+alert(aleatorio);
+
+//pow (<base>,<exponente>): devielve el valor de la porencia
+    alert("El valor de 2 al cubo es "+Math.pow(2,3));
+
+//sqrt (<numero>): devuelve la raiz cuadrada
+    alert("La raiz cuadrada de 36 es "+Math.sqrt(36));
+
+//abs (<numero>): devuelve el valor absoluto de un numero
+    alert("el valor absoluto de -5 es "+Math.abs(-5));
+
+//METODOS TRIGONOMETRICOS:
+//sin, cos, tan, asen, acos, atan, atan2
+
+
+
+
+    </script>
+</body>
+</html>

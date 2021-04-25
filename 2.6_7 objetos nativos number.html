@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*CARACTERISTICAS:
+    -en js solo hay un tipo de dato numerico
+    -podemos representar: 34 (entero), 35.25(fracción), 12e5 (exponecial) o 0xFF (hexadecimal)
+    */
+
+    //CAMBIO DE BASE ENTRE NUMERO toString()
+    var base10 = 128;
+    alert(base10+" base10 en binario es "+base10.toString(2));
+    alert(base10+" base10 en octario es "+base10.toString(8));
+    alert(base10+" base10 en hexadecimal es "+base10.toString(16));
+
+    //INFINITO Y -INFINITO infinity y -infinity
+    var inf=2;
+    while(inf != Infinity){
+        alert(inf);
+        inf = inf*inf; //tambien pudiese ser inf*= inf;
+    }
+   
+    var div=2, div2=0;
+    alert("Division 2/0 "+2/0);
+    alert("Division-2/0 "+(-2/0));
+    alert("typeOf: "+(div/div2));
+
+    //NOT A NUMBER NaN
+    var atipico = 100 / "casa";
+    var atipico2 = 100 / '10';
+    alert("100/'CASA' "+atipico);
+    alert( "100 / '10' "+atipico2);
+    alert("Es atipico un NaN? "+isNaN(atipico));
+    alert("Que tipo es NaN? "+typeof(atipico));
+
+
+    //NUMEROS COMO OBJETOS
+    var num = 123;
+    var num2 = new Number (123);
+    var num3 = new Number (123);
+    alert("num: "+typeof(num));
+    alert("num2: "+typeof(num2));
+    alert("num == num2 "+(num == num2));
+    alert("num === num2 "+(num===num2));
+    alert("num2 == num3 "+(num2==num3));
+    alert("num2 === num3 "+(num2===num3));
+
+
+    //PROPIEDADES
+    var maximo = Number.MAX_VALUE; alert("maximo = "+maximo);
+    var minimo = Number.MIN_VALUE; alert("minimo = "+minimo);
+    var neginf = Number.NEGATIVE_INFINITY; alert(" infinito negativo = "+neginf);
+    var posinf = Number.POSITIVE_INFINITY; alert(" infinito positivo = "+posinf);
+    var numnan = Number.NaN; alert("Not a number = "+numnan);
+
+    //METODOS
+    //toFixed(<num decimales>): devuelve cadena con el numero especifico de decimales indicado.
+    var x = 10.8765;
+    alert(x.toFixed(0));
+    alert(x.toFixed(2));
+    alert(x.toFixed(6));
+
+    //toPrecision (<num de cifras>): devuelve ucadena con el numero especifico de cifras.
+    var y = 10.8765;
+    alert(y.toPrecision());
+    alert(y.toPrecision(2));
+    alert(y.toPrecision(6));  
+
+    //toExponential (<num de cifras>): devuelve cadena con el numero redondeado a notacion cientifica
+    var z = 123456789;
+    alert(z.toExponential(0));
+    alert(z.toExponential(2));
+    alert(z.toExponential(6));
+ 
+    //valueOf: devuelve el valor primitivo de un objeto
+    var pri = 123;
+    alert(pri.valueOf());
+    
+    //toString: devuelve la cadena de un numero
+    var a = 123;
+    alert(a.toString());
+    alert((123+8).toString());
+
+    //METODOS GLOBALES PARA CONVERTIR VARIABLES EN NUMEROS
+    //Number(): devuelve el valor numerico
+    alert(Number (true));
+    alert(Number (false));
+    alert(Number (new Date()));
+    alert(Number ('10'));
+    alert(Number ('casa'));
+
+
+
+    </script>
+</body>
+</html>
