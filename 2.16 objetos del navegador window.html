@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="reloj"></p>
+    <script>
+/* EVENTOS DE TIEMPO:
+- el objeto window permite ejecutar codigos en intervalos de tiempo
+*/
+
+//setTimeout (<funcion>,<milisegundos>): se indicia cuantos segundos deben pasar para que la funcion indicada en el primer parametro se ejucute
+    function saludar(){
+        alert("Hola");
+    }
+//clearTimeout (<variable>): si asignamos setTimeout a una variable, podemos deneter su ejecucion con clearTimeout.
+
+//setInterval (<funcion>, <milisegundos>): repite funcion cada intervalo de tiempo.
+    var int = setInterval(reloj,1000);
+
+    function reloj(){
+        var fecha = new Date();
+        document.getElementById("reloj").innerHTML = fecha.getMilliseconds();
+    }
+    </script>
+
+    <button onClick="setTimeout(saludar,3000)">Saludar</button>
+    <button onClick="sal = setTimeout(saludar,3000)">saludo con variable</button>
+    <button onClick="clearTimeout(sal)">cancelar saludo</button>
+    <button onClick="clearTimeout(int)">cancelar contador</button>
+</body>
+</html>

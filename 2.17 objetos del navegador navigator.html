@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="navegador"></p>
+    <script>
+/*CARACTERISTICAS: 
+-guarda informacion del navegador
+-no hay un estandar publico pero la mayoria de los navegadores soportan este objeto
+*/
+
+//PROPIEDADES DEL OBJETO NAVIGATOR
+var texto = "";
+
+//appCodeName: codeName del navegador
+texto += "<br/>Codename: "+navigator.appCodeName;
+//appName: appName del navegador
+texto += "<br/>appName: "+navigator.appName;
+//appVersion: appVersion del navegador
+texto += "<br/>appVersion: "+navigator.appVersion;
+
+//product: motor del navegador
+texto += "<br/>product: "+navigator.product;
+//platform: plataforma del navegador
+texto += "<br/>platform: "+navigator.platform;
+//onLine: comprueba si el navegador esta online
+texto += "<br/>onLine: "+navigator.onLine;
+
+//language: comprueba el idioma del navegador
+texto += "<br/>language: "+navigator.language;
+//cookieEnabled: comprueba las cookies del navegador
+texto += "<br/>cookieEnabled: "+navigator.cookieEnabled;
+//userAgent: comprueba la cabecera del navegador
+texto += "<br/>userAgent: "+navigator.userAgent;    
+
+//geolocation: devuelve un objeto geolocation que indica la posicion del ususario
+texto += "<br/>geolocation: "+navigator.geolocation;
+
+//metodo del objeto navegador   
+//javaEnabled: comprueba si java esta activadoa
+alert("java "+navigator.javaEnabled());
+
+document.getElementById("navegador").innerHTML = texto;
+    </script>
+</body>
+</html>

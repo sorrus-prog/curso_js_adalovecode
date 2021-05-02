@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p id="ventana"></p>
+
+
+    <script>
+        /* OBJETO DEL NAVEGADOR: WINDOW
+        -Representa una ventana abierta en un navegador
+        -Si en una  ventana hay etiquetas de tipo <iframe> el navegador crea un objeto window para el html inicial y uno para cada <iframe>
+        -Todos los objetos, funciones, variables... son miembros del objeto window: las funciones son sus metodos; las variables globales y el DOM sus propiedades.
+        -No todos los metodos sirven para todos los navegadores: hay que comprobar la compatibilidad.
+        */
+
+        //PROPIEDADES BASICAS DE WINDOW
+        window.name = "Mi ventana";
+        var texto = "";
+        //NOMBRE DE LA PAGINA
+        texto += "<br/>Nombre: "+window.name;
+        //TAMAÑO DE LA VENTANA CON TOOLBAR Y SCROLLBAR
+        texto += "<br/>Ancho externo "+window.outerWidth;
+        texto += "<br/>Alto externo: "+window.outerHeight;
+        //TAMAÑO DE LA VENTANA SIN TOOLBAR NI SCROLLBAR
+        texto += "<br/>Ancho interno: "+window.innerWidth;
+        texto += "<br/>Alto interno: "+window.innerHeight;
+        //SCROLL HORIZONTAL Y VERTICAL
+        texto += "<br/>Scroll horizontal: "+pageXOffset;
+        texto += "<br/>Scroll vertical: "+pageYOffset;
+        //DISTANCIA HASTA LOS BORDES DEL ESCRITORIO
+        texto += "<br/>Distancia desde la izquierda: "+window.screenX;
+        texto += "<br/>Distancia hasta arriba"+window.screenY;
+    
+        document.getElementById("ventana").innerHTML = texto;
+
+        /*PROPIEDADES CON IFRAME
+        -frames: devuelve todos los elementos iframe de la ventana
+        -frameElement: devuelve el frame en el que la ventana esta insertada
+        -length: devuelve el numero de frames que tiene la ventana
+
+        //PROPIEDADES CON OTRAS VENTANAS
+        -closed: devuelve booleanos si la ventana esta cerrada
+        -opener: devuelve una referencia con la ventana que creó la ventana actual
+        -parent: devuelve la ventana padre de la ventana actual
+        -self: devuelve la ventana actual
+
+        //OTROS OBJETOS DEL NAVEGADOR
+        window.document
+        window.navigator
+        window.screen
+        window.history
+        window.location
+        */
+
+        //METODOS CON WINDOW MAS IMPORTANTES
+        var miVentana; //Crear fuera de las funciones para poder acceder a ella correcta
+
+        //open (<url>,<nombre>,<especificaciones>,<replace>) //abre una ventana 
+            function crearVentana(){
+                //miVentana = window.open("http://www.google.com"); //devuelve una nueva ventana con la pagina cargada 
+                miVentana = window.open("","","width=500,height=200"); //devuelve una ventana nueva de 500 x 200
+                miVentana.document.write("<h1>Mi ventana</h1>");
+            }
+        //close() //cierra la ventana
+            function cerrarVentana (){
+                miVentana.close();
+        }
+
+        //resizeBy (<n° de px>,<n° de px>): redimensiona la ventana poco a poco un numero de pixeles respecto a su tamaño actual
+            function redimVentana(){
+                miVentana.resizeBy(10,10);
+            }
+        //resizeTo (<n° de px>,<n° de px>): redimensiona  de una vez la ventana al numero de pixeles respecto a su tamaño actual
+            function redimVentana2(){
+                miVentana.resizeTo(10,10);
+            }
+        //moveBy (<n° de px>,<n° de px>): mueven la ventana un numero de pixeles respecto a la posicion actual poco a poco
+            function moverVentana (){
+                miVentana.moveBy(10,10);
+            }
+        //moveTo (<n° de px>,<n° de px>): mueven la ventana un numero de pixeles respecto a la posicion actual de una vez
+            function moverVentana2 (){
+                miVentana.moveTo(10,10);
+            }
+        //scrollBy y ScrollTo: funcionan igual que las anteriores pero esta vez moviendo el scroll
+
+        //focus(): enfoca la ventana que llama al metodo
+        function enfocarVentana(){
+            miVentana.focus();
+        }
+
+        //print(): imprime la ventana
+        function imprimir(){
+            //print();
+           miVentana.print();
+        }
+
+        //stop(): detiene la carga de la pagina
+
+
+
+
+
+</script>
+
+<button onclick="crearVentana()">Crear ventana</button>
+<button onclick="cerrarVentana()">Cerrar ventana</button>
+<button onclick="redimVentana()">Redimensionar ventana</button>
+<button onclick="redimVentana2()">Redimensionar ventana 2</button>
+<button onclick="moverVentana()">mover ventana </button>
+<button onclick="moverVentana2()">mover ventana 2</button>
+<button onclick="enfocarVentana()">Enfocar</button>
+<button onclick="imprimir()">Imprimir</button>
+
+
+</body>
+</html>

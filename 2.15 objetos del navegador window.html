@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //alert(<mensaje>): muestra un mensaje al usuario y no devuelve ningun valor
+    alert("Hola, mundo");
+
+    //promtp(<mensaje>,[texto por defecto]): muestra un mensaje al usuario y un campo que puede contener o no texto por defecto.
+    //lo que introduzca el usuario se alamacenara en una variable a la que se asigne.
+    var respuesta = prompt("¿Cual es tu nombre?","introduce un nombre");
+    alert("Hola "+respuesta);
+
+    //confirm(<mensaje>): muestra un mensaje al usuario y dos botones. Si el usuario pulsa "aceptar" devuelve true.
+    //si el ususario pulsa "cancelar" o cierra la ventana devuelve false.   
+        var respuesta2 = confirm("¿Te gusta JavaScript?");
+        if (respuesta2 == true) alert("Me alegro");
+        else alert("Es una pena");
+       // alert( (respuesta2) ? "Me alegro" : "Es una pena"); //esta es la version corta
+
+
+
+
+    </script>
+</body>
+</html>

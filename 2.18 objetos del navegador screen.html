@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pantalla"> </p>
+    <script>
+    /*CARACTERISTICAS: contiene la informacion de la venta de los visitante
+    -no hay un estandar pero la mayoria de navegadores soportan este objeto
+    */
+    var pant = "";
+
+    //PROPIEDADES DEL OBJETO SCREEN
+    //tamaño de la pantalla del usuario
+    pant += "<br/> Ancho: "+screen.width;
+    pant += "<br/> Alto: "+screen.height;
+
+    //tamaño de pantalla sin barra de tareas
+    pant += "<br/> Ancho sin barra de tarea: "+screen.availWidth;
+    pant += "<br/> Alto sin barra de tarea: "+screen.availHeight;
+    
+    //profundidad de color de la pantalla
+    pant += "<br/> Profunidad de color: "+screen.colorDepth;
+    //resolucion de color
+    pant += "<br/> Resolucion: "+screen.pixelDepth;
+    
+    //orientacion
+    pant += "<br/> Orientacion: "+screen.orientation;
+
+document.getElementById("pantalla").innerHTML = pant;
+    </script>
+</body>
+</html>

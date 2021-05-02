@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/* Sintaxis de acceso la las propiedades el objeto.
+-objeto.propiedad
+-objeto["propiedad"]
+-objeto[expresion] la expresion hace referencia a la propiedad.
+*/ 
+
+var personal = {nombre: "amado", apellido: "martinez", edad: 35}
+personal.nacionalidad = "venezolano";
+delete personal.nombre;
+/*alert(personal.nombre);
+alert(personal["apellido"]);
+var expresion = "edad"
+alert(personal[expresion])
+*/
+/*RECORRER LAS PROPIEDADES DE UN OBJETO
+for (<nombre de la variable> in <nombre del objeto>){
+    <nombre del objeto>[<nombre de la variable>]
+}
+*/
+for(x in personal){
+    alert(personal[x]);
+
+}
+
+/*añadir una nueva propiedad a un objeto:
+<nombre del objeto>.<nueva propiedad> = <valor de la propiedad>; */
+personal.nacionalidad = "venezolano";
+
+
+/*borrar una propiedad de un objeto:
+delete <nombre del objeto>.<nombre de la propiedad>;
+*/
+delete personal.nombre;
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="locacion"></p>
+    <script>
+/* CARACTERISTICAS:
+-guarda informacion de la url actual
+-no hay un standar publico pero la mayoria de los navegadores lo soportan
+*/
+
+//PROPIEDADES:
+var texto = "";
+
+//href: nos devuelve el href  (url) de la pagiuna que nos encontramos
+texto += "<br/> href sera: "+location.href;
+//hostname: nos devuelve el nombre del host de la pagina
+texto += "<br/> hostname sera: "+location.hostname;
+//pathname: nos devuelve el pathname  () de la pagiuna
+texto += "<br/> pathname sera: "+location.pathname;
+//protocol: indica cual es el protocolo de la pagina
+texto += "<br/> protocolo sera: "+location.protocol;
+//hash: en caso de que haya un hash o ancla no los lo muesta (sirve para paginas con mucho texto)
+texto += "<br/> hash sera: "+location.hash;
+//host: devuelve el hostname y el puerto
+texto += "<br/> host sera: "+location.hostname;
+//origin: devuelve el hostname y el puerto y el nombre del protocolo
+texto += "<br/> origin sera: "+location.origin;
+//search: almacena el querystring de la pagina (Ej. www.web.com/index.html?user=ada) lo que esta despues del signo de interrogacion
+texto += "<br/> search sera: "+location.search;
+
+//METODOS
+//assign(<url>): asigna un nuevo documento a la pagina
+    function nuevoDocument(){
+        location.assign("http://www.google.com")
+    }
+//reload(): recarga la pagina
+function recarga(){
+    location.reload();
+}
+//replace(<url>): sustituye la pagina por otra. DESAPARECE SI HISTORIAL.
+function sustituye(){
+    location.replace("http://www.gmail.com");
+}
+
+
+
+document.getElementById("locacion").innerHTML = texto;
+    </script>
+
+<button onclick="nuevoDocument()">Nuevo documento</button>
+<button onclick="recarga()"> recarga</button>
+<button onclick="sustituye()">sustituye()</button>
+</body>
+</html>

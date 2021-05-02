@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//1. definir y crear un objeto simple usando un literal. Puede ser en una linea o en varias
+var persona1 = {nombre:"Amado", apellido:"Martinez", edad:31};
+
+var personaUno = {
+    nombre: "Sorrus",
+    apellido: "Sorreano",
+    edad: 33}
+
+//2. definir y crear un objeto simple usando la palabra new.
+var persona2 = new Object();
+persona2.nombre = "Luisa";
+persona2.apellido = "Araque";
+persona2.edad = 35;
+
+//3. Definir un constructor de un objeto y crear objetos del tipo construido. Esta es la mas recomendable
+function Persona(nom, ap, edad){
+    this.persona = nom;
+    this.apellido = ap;
+    this.edad = edad;
+}
+var sorrus = new Persona ("sorrus", "sorreano", 35);
+var luisa = new Persona ("Luisa", "Araque", 39);
+
+/*This: es un keyword
+-Hace referencia al propietario de la funcion   que esta invocandoce
+-hace refenrencia al objeto donde la funcion es un metodo.
+*/
+
+    </script>
+</body>
+</html>
