@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*Sintaxis de construccion de un prototipo de un objeto usando la funcion costructor:*/
+function Persona (nom, ape, an){
+    this.nombre = nom;
+    this.apellido = ape;
+    this.ano = an;   
+
+    this.nombreCompleto = function(){
+        return this.nombre + " " + this.apellido;
+    }
+}
+ var sorrus = new Persona ("Amado", "Martinez", 23);
+ var luisa = new Persona ("Luisa", "Daniela", "33");
+
+ //Añadir una propiedad a un objeto
+    sorrus.nacionalidad = "venezolano"; //solo se añade al objeto sorrus y no al prototipo
+    alert(sorrus.nacionalidad);
+
+//añadir un metodo a un objeto
+    sorrus.nacimiento = function (){
+    return "La edad es "+this.ano;
+}
+alert(sorrus.nacimiento());
+
+
+/*AÑADIR UNA PROPIEDAD A UN PROTOTYPE
+-Añadiendo directamente sobre la definicion del prototype
+-Mediante la sintaxis: <nombre_objeto>.prototype.<propiedad>
+   */ 
+   Persona.prototype.muerte = "2000";
+   alert(luisa.muerte);
+
+   /*Añadir un metodo a un prototipo
+   -Añadiendo directamente sobre la definicion del prototype
+   -Mediante la sintaxis <nombre_objeto>.prototype.<metodo> = ...*/
+Persona.prototype.defuncion = function(){
+    return "La fecha de muerte "+this.muerte;
+}
+alert(luisa.defuncion());
+
+
+
+
+    </script>
+</body>
+</html>

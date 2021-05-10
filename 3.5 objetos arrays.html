@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+/*CARACTERISTICAS
+-almacena en una misma vairable multiples valores, pueden ser primitivos, objetos, etc
+-se referencia con un indice numerico
+-¡Ojo! Un objeto se referencia con un nombre
+-Podemos llamar a un elemendo del array diciendo en que posicion se encuentra
+-No es necesario que contengan el mismo tipo de datos (puede almacernar cualquier tipo)
+*/
+
+//OPERACIONES BASICAS CON UN ARRAY:
+
+//Crear un Array: var nombreArray = [<valores separados por comas>]
+    var animales = ["Perro", "Gato", "Lobo"];
+    var prop;
+// o tambien aunque menos recomendada new Array (<valores separados por comas>)
+    var animales2 = new Array("raton", "tigre", "Leon");
+
+//Acceso a los elementos de un array
+// nombreArray [<indice>]; el primer elemento es 0
+    var miAnimal = animales[0];
+
+//Mostrar todo el array utilizando instrucciones de mostrar (alert, document write, etc..)    
+alert(animales);
+document.write(animales);
+
+//PROPIEDADES:
+//length: devuelve la longitud del array (numero de elementos)
+document.write("<br/> la longitud del array es: "+animales.length);
+
+//Mostrar los valores del array uno a uno
+document.write("<br/><br/>Todos los animales: ")
+for(i=0; i<animales.length; i++)
+    document.write("<br/>",animales[i]);
+
+//METODOS
+//Array.isArray(<nombre_del_array>): devuelve True si es un objeto de tipo array. Si ponemos typeof (<nombre del array>) devuelve object
+document.write("<br/> Es un array? "+Array.isArray(animales));
+
+//<nombre array> instanceof Array: devuelve true si es un Array
+document.write("<br/> Segiro ? "+(animales instanceof Array));
+
+//METODOS PARA MOSTRAR EL ARRAY
+// toString(): se usa en todos los objetos nativos y convierte el array en cadena
+document.write("<br/> El array en tipo string es "+animales.toString());
+
+//join(<separador>): convierte el array a cadena separado por un separador indicado por parametro
+document.write("<br/> El array con join tipo string es "+animales.join(" + "));
+
+//METODOS QUE NOS PERMITEN AÑADIR, EXTRAER O BORRAR ELEMENTOS.
+//pop() y shift(): extraen el ultimo y primer elemento respectivamente y lo guarda en una variable(si queermo)
+var ultimo = animales.pop();
+document.write("<br/> despues de sacar "+ultimo+" Quedan "+animales.toString());
+
+//delete nombreArray(<indice>): elimina el elemento y lo transforma en undefined.
+
+//push (<elemento>) y unshift (): añade el elemento al final y al principio respectivamente
+animales.push("raton"); 
+document.write("<br/> despues de introducir el otro animal queda "+animales.toString());
+//Nota: Tambien podemos añadir con animales[<indice>] = <"elemento"> //pero hay que tener cuidado de no sobreescribir y dejar huecos.
+
+//splice(<posicion a insertar/borrar>, <elementos a borrar>, [elementos añadir separados por comas]):
+    animales.splice(2,1,"torito","caiman");
+    document.write("<br/> despues de añadir dos y quitar uno queda"+animales.toString());
+    //animales.splice(0,1); eliminaria el primer elemento
+
+//slice (<ini>,[<fin>]): devuelve un subarray desde la posicion indicada hasta (sin incluir) la final (no es obligatorio)
+    var subarray = animales.slice(1,3);
+    document.write("<br/> el subarray de animales es "+subarray.toString());
+
+//concat(<array separados por comas>):
+    var masAnimales = ["culebra", "acure"];
+    animales = animales.concat(masAnimales);
+    document.write("<br/> Los array concatenados son "+animales.toString());
+
+//copyWithin(): copia elementos del array y los sustituye por otros elementos.
+//fill(<elemento>): sustituye todos los elementos del array por el elemento indicado
+
+//indexOf(<elemento>,[pos]) y lastIndexOf(<elemento>,[pos]): devuelve la primera o ultima posicion de un elemento respectivamente; podemos pasarle a partir de que posicion va buscar
+document.write("<br/> La primera posicion de Toro es: "+animales.indexOf("torito"));
+
+//METODOS PARA ORDENAR E INVERTIR EL ORDEN DEL ARRAY
+
+//reverse(): invierte el orden de un array
+animales.reverse();
+document.write("<br/> Luego de la inversion queda: "+animales.toString());
+
+//sort(): ordena el array
+animales.sort();
+document.write("<br/> el array despues de ordenar es: "+animales.toString());/*ojo con sort, cuando hablamos de cadenas estas se ordenan alfabeticamente
+caracter por caracter, ocurre lo mismo con los numero si los tratamos como cadenas. Si queremos ordenar el array por numero debemos almacenarlos como numeros
+los numero almacenados como cadenas se comparan caracter a caracter, no como cifras*/ 
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

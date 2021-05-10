@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos. Modelo de registro de eventos en linea</title>
+    <!--EVENTO: 
+    Mecanismo que se acciona cuando el usuario realiza un cambio sobre la pagina web.
+    Capturar un evento es programar una accion para que realize una tarea.
+    El encargado de gestionar los enventos es el DOM (Document object Model)
+    
+    MANEJADOR: Accion que se va a manejar. Ej: En el evento click (hacer click con el raton) el manejador es onClick.
+    -->
+</head>
+<body onload="alert('la pagina se ha cargado correctamente')">
+     <h1>Modelo de registro de eventos en linea</h1>
+    <!--Cada elemento XHTML tiene sus posibles eventos como 
+    propiedades: puede tener un evento de cada tipo.
+    El nombre del evento es "on" seguido por el nombre de la 
+    acción-->
+
+    <!--Manejadores como atributo de una etiqueta XHTML-->
+    <h3 id="cab1" onclick="this.innerHTML='Javascript en XHTML'"
+    onmouseover="this.style.background='red'" onmouseout="
+    this.style.background='white'">Pulsa aqui para ver lo que 
+    se ejecuta</h3>
+    <!--<h3 id="cab1" onclick="document.getElementById("cab1").
+    innerHTML="...">...</h3>-->
+
+    <!--Manejadores como funciones externas-->
+    <h3 onclick="cambiar(this)">Pulsa aqui para ver que se ejecuta 
+    y funcion externa</h3>
+        <script>
+            function cambiar(elemen){
+                elemen.innerHTML = "JavaScript en XHTML"
+            }
+
+        </script>
+
+        <!--Hay acciones que desencadenan varios eventos,
+        Ej. submit desencadena onmousedown, onclick, onmouseup,
+    onsubmit.
+        Para evitar que el navegador ejecute la accion por defecto
+        necesitamos añadir "return false;"-->
+        <a href="http://www.google.com" onclick="alertar(); return false;">
+        Pulsa aqui para ver que se ejecuta</a>
+        <script>
+            function alertar(){
+                alert("Vamos a google");    
+            }
+        </script>
+    
+    <br/>
+        <a href="http://www.google.com" onclick="return preguntar();">Pulsa aqui</a>
+        <script>
+        function preguntar(){
+            return confirm("Deseas ir a google ?");
+        }
+        </script>
+
+        <!--Carga de pagina con evento onload: este evento lo que hace es indicarle a la pagina
+        que no cargue ningun js hasta que no cargue todo el html-->
+        <!--Escribimos la etiqueta <body onload="funcion_ejecutar"-->
+
+</body>
+</html>

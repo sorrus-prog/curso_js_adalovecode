@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <SCript>
+/*sintaxis de creacion de metodos de un objeto:
+<metodo_nombre> : function(){
+    //instrucciones
+}
+
+-Sintaxis de acceso a metodos de un objeto:
+<nombre_objeto>.<nombre_metodo>()
+*/
+
+var persona1 = {nombre:"Ada", 
+						apellido:"Lovelace",
+						nombreCompleto: function(){
+							return this.nombre + " " + this.apellido;
+							}
+						};
+		alert (persona1.nombre);
+		alert (persona1.apellido);
+		alert (persona1.nombreCompleto());
+
+
+var personal = {nombre:"sorrus",
+                apellido:"sorreano",
+                nombreCompleto : function(){
+                return this.nombre + " " + this.apellido;
+                                        }
+                };
+
+alert(personal.nombre);
+alert(personal.apellido);
+alert(personal.nombreCompleto());
+alert(personal.nombreCompleto);//si no se colocan los parentesis se mostrará el codigo
+    </SCript>
+</body>
+</html>
