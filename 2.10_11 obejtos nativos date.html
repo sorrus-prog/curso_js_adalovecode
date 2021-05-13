@@ -36,7 +36,7 @@
         alert(d7);
         alert(d8);
         alert(d9);
-     
+
         //CREACION DE FECHAS CON MILISEGUNDO
         var dms = new Date (86000000)
         alert("La fecha en milisegundos es "+dms);
@@ -46,7 +46,29 @@
         var fechaCorta = new Date(2021, 12, 00);
         alert("Fecha larga es "+fechaLarga+"\n fecha corta es "+fechaCorta);
 */
+        //METODOS GET
+        var fc = new Date ("April 25, 2021 11:00:23");
+/*        alert(fc.getDay()+" "+fc.getDate()+"/"+fc.getMonth()+"/"+fc.
+      getFullYear());
+        alert(fc.getHours()+":"+fc.getMinutes()+":"+fc.getSeconds()+":"+
+      fc.getMilliseconds());
+        alert("Ms desde 1/1/1970 son: "+fc.getTime());
+*/
 
+      //METODOS SET:
+      fc.setDate(26);
+      fc.setMonth(0);
+      fc.setFullYear(2020);
+      fc.setHours(0);
+      fc.setMinutes(59);
+      fc.setSeconds(59);
+      fc.setMilliseconds(59);
+      //fc.setTime(<ms>) Modifica la fecha y la hora contando los milisegundos desde 1/1/1970
+      alert(fc.toString());
+
+      //calculo de horas
+      fc.setMonth(fc.getMonth()+3);
+      alert(fc.toString());
 
     </script>
 </body>
