@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registro de eventos de modo tradicional</h1>
+
+    <h3 id="tradicional">Haz click y mira lo que pasa</h3>
+    <script>
+        document.getElementById("tradicional").onclick = cambiar;  //Sin parentesis porque sino se ejecuta
+       
+       function cambiar(){
+        alert("Vamos a la funcion cambiar");
+        document.getElementById("tradicional").innerHTML = "El texto ha cambiado";
+        document.getElementById("tradicional").onclick = null;
+       }
+    </script>
+
+    <!--Inconveniente: la pagina debe estar completamente cargada para que se utilicen las funciones DOM
+    que asignan manejadores a los elementos HTML-->
+
+    <h3 id="tradicional2">Pulsa aqui otra vez</h3>
+
+    <script>
+
+    window.onload = function(){
+    alert("La pagina ha cargado correctamente");
+    document.getElementById("tradicional2").onclick = miMensaje;
+}
+function miMensaje(){
+document.getElementById("tradicional2").innerHTML = "Este es el segundo mensaje";
+}
+    </script>
+</body>
+</html>
