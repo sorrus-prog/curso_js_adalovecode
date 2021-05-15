@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Modelo de registro de evento de microsoft</h1>
+   
+   <h3 id="ms">Modelo de microsoft</h3>
+   <h3 id="msanonimo">Modelo de microsoft anonimo</h3>
+
+   <script>
+document.getElementById("ms").attachEvent("onclick", saludarUnaVez);
+document.getElementById("ms").attachEvent("onclick", colorear);
+document.getElementById("ms").attachEvent("onmouseover", fondo);
+
+function saludarUnaVez(){
+    alert("Hola");
+    document.getElementById("ms").detachEvent("onclick", saludarUnaVez);
+}
+
+function colorear(){
+    document.getElementById("ms").style.color = "blue";
+}
+
+function fondo(){
+    document.getElementById("ms").style.background = "red";
+
+}
+
+  /* Funciones anónimas */
+        /* elemento.attachEvent("<evento_con_on>",function(){...}); */
+            documnet.getElementById("msanonima").attachEvent("onclick", function () {
+            this.style.backgroundColor = "#C0C0C0";
+   </script>
+</body>
+</html>
