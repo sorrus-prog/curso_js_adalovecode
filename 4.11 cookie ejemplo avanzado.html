@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies ejemplo avanzado</title>
+</head>
+<body>
+    <button type="button" id="verTodas">Ver todas las cookies</button>
+    <br/>
+    <button type="button" id="crearCookie">Crear cookie</button>
+    <br/>
+    <button type="button" id="modificarCookie">Modifcar cookie</button>
+    <br/>
+    <button type="button" id="leerCookie">Leer cookie</button>
+    <br/>
+    <button type="button" id="borrarCookie">Borrar cookie</button>
+
+<script>
+document.getElementById("verTodas").addEventListener("click", verCookies);
+document.getElementById("crearCookie").addEventListener("click", creaModifCookie);
+document.getElementById("modificarCookie").addEventListener("click", creaModifCookie);
+document.getElementById("leerCookie").addEventListener("click", leerCookie);
+document.getElementById("borrarCookie").addEventListener("click", borrarCookie);
+
+function verCookies() {
+    alert("Las cookies son: \n"+document.cookie);
+}
+
+function creaModifCookie() {
+    var nombre = prompt("Introduzca el nombre de la cookie");
+    var valor = prompt("Introduzca su valor");
+    var expiracion = parseInt(prompt("Introzca los dias para que expire"));
+    setCookie(nombre, valor, expiracion);
+    verCookies();
+}
+
+function leerCookie(){
+    var nombre = prompt("Introduzca el nombre de la cookie a buscar")
+    var resultado = getCookie(nombre);
+    alert(resultado);
+}
+
+function borrarCookie(){
+    var nombre = prompt("Introduzca el nombre de la cookie a borrar")
+    deleteCookie(nombre);
+    verCookies();
+}
+ function deleteCookie(nombre) {
+     setCookie(nombre, "", 0)
+ }
+ 
+function setCookie (nombre, valor, expiracion) {
+    var d = new Date();
+    d.setTime(d.getTime()+expiracion*24*60*60*1000);
+    var expiracion = "expires="+d.toUTCString();
+    document.cookie = nombre+"="+valor+";"+expiracion;+";path=/";
+}
+
+function getCookie(nombre) {
+    var nom = nombre+"=";
+    var array = document.cookie.split(";");
+    for (var i = 0; i<array.length; i++){
+        var c = array[i];
+        while (c.charAt(0)==" ") {
+            c = c.substring(1);
+        }
+        if (c.indexOf(nombre)==0){
+            return c.substring(nom.length, c.length);
+        }
+    }
+    return "";
+}
+</script>
+</body>
+</html>

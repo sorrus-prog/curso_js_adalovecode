@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+
+<body>
+    <!--COOKIES
+    -Datos almacenados en nuestro ordenador en pequeños archivos de texto
+    -Recuerdan la informacion del usuario aunque se cierre el navegador o se desconecte del servidor
+    -Podemos guardar el nombre del visitante de la pagina, el numero de veces que ha entrado, etc.
+    -Se guardan en forma de pares "nombre=valor": usuario = Ada Lovelace
+-->
+
+<script>
+//crear una cookie: nombre; fecha de expiracion UTC; edad maxima en segundos; ruta; dominio;
+//max-age=3600; para indicar la edad maxima
+//domain para indicar el dominio
+//document.cookie = "usuario=Ada Lovelace; expires=Thu, 16 Nov 2021 12:00:00 UTC; path=/;"
+//cuando se modifique una cookie hay que hacerlo siempre con los mismos parametros porque sino la identifica como una nueva cookie
+document.cookie = "usuario = Ada Lovelace;";
+document.cookie ="sexo=mujer;";
+
+//Leer una cookie
+var miCookie = document.cookie; // Esto muestra todas las cookies como ni fuesen una cadena separada por ; pero no son cadena.
+alert(miCookie);
+
+//Modificar una cookie
+document.cookie ="sexo=hombre" // se deben pasar los mismos parametros porque sino se crea una nueva cookie
+
+//Borrar una cookie
+// Se le pasa una fecha anterioir a la creacion, se acostrumbra pasar una fecha antes de 1970
+document.cookie = "usuario= ; expires = Thu, 01 Jan 1970 00:00:01 GMT;"
+document.cookie = "sexo= ; expires = Thu, 01 Jan 1970 00:00:01 GMT;"  
+alert(document.cookie)     
+</script>
+</body>
+</html>
