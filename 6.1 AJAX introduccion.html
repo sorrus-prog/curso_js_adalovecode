@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+</head>
+<body>
+    <div id="texto">
+        <h1>AJAX</h1>
+        <button id="cambiaContenido">Cambia el contenido</button>
+    </div>
+    <script>
+        document.getElementById("cambiaContenido").addEventListener("click", cambiaContenido);
+        function cambiaContenido(){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if (this.readyState ==4 && this.status==200){
+                    document.getElementById("texto").innerHTML = this.responseText;
+                }
+            };
+            /* open: especifica la peticion
+            -El method puede ser GET (envia los datos a traves de la url, max 2000 caracteres)
+             o POST.
+            -El url: la ubicacion del archivo, local o en servidor (txt, php, xml, json,).
+            -async: true ( asincrono) o false (sincrono, es decir no continua hasta que la respuesta este lista)
+            */
+            xhr.open("GET", "holamundo.txt", true);
+            /*send(); envia la solcitud al servidor. 
+            si utilizamos POST pasamos los datos por parametro send("parametro") */ 
+            xhr.send();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = inicio;
+
+        function inicio(){
+            for (var i = 0; i<document.getElementsByTagName("h2").length; i++){
+                document.getElementsByTagName("h2")[i].addEventListener("click", recorrerAdelante);
+            }
+        }
+
+        function recorrerAdelante(e){
+            var texto = "";
+            var h2 = e.target;
+            texto += "Has elegido"+h2.textContent;
+        
+            //Seleccionar el padre
+        var padre = h2.parentElement;
+        texto += " que esta situada en "+padre.id+"<br/>";
+        
+
+            //Seleccionar el hermano
+            //var ul = h2.nextSibling // No se usa porque toma el salto de linea como un elemento de tipo texto
+            var ul = h2.nextElementSibling;
+
+
+        //Mostrar el mumero de hijos
+        //Ojo .childNodes incluye texto y comentarios. children no.
+        texto += "El numero de provincias es "+ul.children.length+": ";
+
+        var hijo = ul.firstChild;
+        //si quisieramos seleccionar el ultimo hijo pondriamos .lastChild
+        while (hijo != null){
+            texto += " "+hijo.textContent; 
+            hijo = hijo.nextElementSibling;
+            //Si quisieramos seleccionar el hermano anterior .previousElementSibling
+        }
+        //Mostramos el texto
+        document.getElementById("texto").innerHTML = texto;
+        // Si ponemos .textContent mostrariamos texto plano, y no coge etiquetas HTML.
+
+    }
+
+    </script>
+</head>
+<body>
+    <div id="norte">
+        <h2>Galicia</h2>
+        <ul id="lista">
+            <li>A Coruña</li>
+            <li>Lugo</li>
+            <li>Orense</li>
+            <li>Pontevedra</li>
+        </ul>
+    </div>
+    <div id="sur">
+        <h2>Canarias</h2>
+        <ul id="lista">
+            <li>Santa Cruz</li>
+            <li>La Palma</li>
+        </ul>
+    </div>
+    <div id="texto"></div>
+</body>
+</html>

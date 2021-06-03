@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX con POST</title>
+    <script>
+        window.onload = inicio;
+        function inicio() {
+            document.getElementById("nombre").addEventListener("keyup", mostrarNombre);
+        }
+
+        function mostrarNombre(e) {
+            var cadena = e.target.value;
+            //var cadena = document.getElementById("nombre").value
+            if (cadena.length == 0){
+                document.getElementById("sugerencia").innerHTML = "";
+            }else {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status ==200){
+                        document.getElementById("sugerencia").innerHTML = this.responseText;
+                    }
+                }
+                xhr.open("POST", "arraynombre.php", true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+                xhr.send("nombre=" + cadena);
+            }
+        }
+    </script>
+</head>
+
+<body>
+ <p>Escribe el nombre en el cuadro inferior:</p>   
+ <form>
+    Nombre:
+    <input type="text" id="nombre"></p>
+</form>
+<p>Sugerencia: <span id="sugerencia"></span></p>
+</body>
+</html>

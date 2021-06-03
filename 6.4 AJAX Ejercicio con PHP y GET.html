@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX. Ejercicio con PHP y GET</title>
+<script>
+    window.onload = inicio;
+
+    function inicio() {
+        document.getElementById("nombre").addEventListener("keyup", mostrarNombre)
+    }
+
+    function mostrarNombre(e) {
+        var cadena = e.target.value;
+        //var cadena = document.getElementById("nombre").value;
+
+        if (cadena.length == 0){ //Si al levantar la tecla no hay nada (ej. al borrar)
+            document.getElementById("sugerencia").innerHTML = "";
+            return;
+        }else {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById("sugerencia").innerHTML = this.responseText;
+                }
+            }
+            xhr.open("GET", "arraynombre.php?nombre=" + cadena, true);
+            xhr.send();
+        }
+    }
+
+</script>
+</head>
+<body>
+    <div>
+        <p><b>Escribe un nombre en el recuadro inferior:</b></p>
+        <form>
+            Nombre:
+            <input type="text" id="nombre">
+        </form>
+        <p>Sugerencias: <span id="sugerencia"></span></p>
+    </div>
+</body>
+</html>

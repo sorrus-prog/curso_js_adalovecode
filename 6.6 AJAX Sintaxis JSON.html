@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sintaxis JSON</title>
+</head>
+<body>
+    <div id="demo">
+        <!--JSON (Javascript Object Notation).
+        -Sintaxis para guardar e intercambiar datos
+        -Texto escrito en notacion de objetos Javascript
+        -JSON es mas corto que XML, mas rapido de leer y escribir y puede integrar arrays-->
+    </div>
+    <script>
+        /*SINTAXIS:
+            -Datos: "nombre": valor //Nombre siempre va entre comillas
+            -Valor: numero, boolenao y null sin comillas; cadena con comillas; objetos entre
+            llaves; arrays entre corchetes. No se pueden enviar ni funciones, ni fechas ni undefined,
+            a menos que sean en forma de cadena.
+            Ej. var ada = {"nombre":"Ada", "apellido": "Lovelace", "nacimiento":1815}
+          */ 
+         
+        //Objetos: nombre del objeto y entre llaves pas nombre:valor
+        var objeto1 = {
+            "nombre":"Ada",
+            "nacimiento": 1815,
+            "pais": "Reino Unido"
+        }
+        //Acceso: utilizamos la noticaion punto o corchetes
+        alert(objeto1.nombre + ", " +objeto1.pais + ", " + objeto1.nacimiento);
+        alert(objeto1["nombre"] + ", " + objeto1["pais"] + ", " + objeto1["nacimiento"])
+
+        //Recorrer los elementos de un objeto
+        for (var x in objeto1){
+        document.getElementById("demo").innerHTML += x + " : " +objeto1[x] + "<br/>";
+        }
+
+        //Objetos que contienen otros objetos
+        var objeto2 = {
+            "nombre":"Ada",
+            "nacimiento": 1815,
+            "pais": "Reino Unido",
+            "hijos": {
+                "hijo1": "Anne Blunt",
+                "hijo2": "Byron King-Noel",
+                "hijo3": "Ralph King-Milbanke"
+            }  
+        }
+
+        //Acceso a objeto dentro de objeto
+        var y = objeto2.hijos.hijo1 // objeto2.hijos["hijo1"]
+        alert("El hijo 1 es "+ y);
+
+        //Arrays: nombre del array y entre corchetes los valores
+        var hijos = {
+           "hijos": ["Anne Blunt" ,"Byron King-Noel","Ralph King-Milbanke"]
+
+        }
+
+        var objeto3 = {
+            "nombre":"Ada",
+            "nacimiento": 1815,
+            "pais": "Reino Unido",
+            "hijos": ["Anne Blunt","Byron King-Noel","Ralph King-Milbanke"]
+
+        }
+        
+        var y = objeto3.hijos[1];
+        alert("El segundo hijo es: "+ y);
+        
+        //Recorrer los elementos de un array
+        var z1 = "";
+        for ( var i in objeto3.hijos){
+            z1 += objeto3.hijos[i] + ", ";
+        }
+        document.getElementById("demo").innerHTML += "Todos los hijos: " + z1 + "<br/>";
+
+        var z2 = "";
+        for (i = 0; i < objeto3.hijos.length; i++){
+            z2 += objeto3.hijos[i] + ", ";
+        }
+        document.getElementById("demo").innerHTML += "Todos los hijos: " + z2 + "<br/>";
+
+
+
+    </script>
+</body>
+</html>
